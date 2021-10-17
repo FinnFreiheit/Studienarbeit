@@ -1,0 +1,29 @@
+.pageContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+        "navbar"
+        "insta"
+        "footer";
+
+    grid-template-rows: 80px 1fr 60px;
+}
+
+.navbar {
+    grid-area: navbar;
+    width: 100%;
+    height: 100%;
+}
+
+.insta{
+    width: 100%;
+    height: 100%;
+    grid-area: insta;
+}
+
+.footer{
+    width: 100%;
+    height: 100%;
+    grid-area: footer;
+}
