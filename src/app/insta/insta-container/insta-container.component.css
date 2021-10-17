@@ -5,3 +5,10 @@
     display: grid;
     grid-template-rows: 1fr 50px;
 }
+
+.pic{
+    width: 80%;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+}

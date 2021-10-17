@@ -1,15 +1,18 @@
-<div class="uk-slideshow" data-uk-observe>
-    <ul class="uk-slideshow-items">
-        <li>
-            <img data-src="../../../assets/pic01.jpg" alt="" uk-cover  uk-img="target: !.uk-slideshow-items">
-        </li>
-        <!--
-        <li>
-            <img src="../../../assets/pic02.jpg" alt="" uk-cover>
-        </li>
-        <li>
-            <img src="../../../assets/pic03.jpg" alt="" uk-cover>
-        </li>
-        -->
-    </ul>
-</div>
+<!-- carousel -->
+<div class="carousel">
+    <ng-container *ngFor="let picture of pictures; let i = index">
+      <img
+        *ngIf = "i === currentPic"
+        [src]="picture.src"
+        class="slide"
+      />
+    </ng-container>
+  
+    <!-- controls -->
+    <button class="control prev" (click)="onPreviousClick()">
+      <span class="arrow left"></span>
+    </button>
+    <button class="control next" (click)="onNextClick()">
+      <span class="arrow right"></span>
+    </button>
+  </div>
