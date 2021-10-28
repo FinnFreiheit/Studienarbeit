@@ -8,13 +8,16 @@ import { environment } from '../environments/environment';
 import { PageComponent } from './page/page.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { InstaModule } from './insta/insta.module';
+import { LoginModule } from './login/login.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageComponent
+    PageComponent,
   ],
   imports: [
+    LoginModule,
     NavigationModule,
     InstaModule,
     BrowserModule,
