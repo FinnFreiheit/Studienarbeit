@@ -11,7 +11,7 @@
 Es handelt sich hierbei um ein Programmierbeispiel für die Studienarbeit mit 
 dem Thema Progressive Web App. 
 Salopp gesagt sind PWAs Webanwendungen, die als Native Apps 
-heruntergeladen werden können. Somit können diese Webanwendung ohne
+heruntergeladen werden können. Somit können diese Webanwendungen ohne
 Internettverbindung ausgeführt werden. Des Weiteren können PWAs auf Geräteschnitstellen 
 wie zum Beispiel Geolocation und Kamera zugreifen sowie Pushnotifikations senden. 
 
