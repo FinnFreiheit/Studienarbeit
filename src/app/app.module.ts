@@ -9,6 +9,7 @@ import { PageComponent } from './page/page.component';
 import { NavigationModule } from './navigation/navigation.module';
 import { InstaModule } from './insta/insta.module';
 import { LoginModule } from './login/login.module';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { LoginModule } from './login/login.module';
     LoginModule,
     NavigationModule,
     InstaModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
