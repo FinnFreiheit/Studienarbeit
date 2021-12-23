@@ -1,8 +1,11 @@
 <div class="container">
-    <div class="pic">
+    <div *ngIf="!clickFlag" class="pic">
         <app-pictures></app-pictures>
     </div>
+    <div *ngIf="clickFlag">
+      <app-comments></app-comments>
+    </div>
     <div class="icons">
-        <app-icons></app-icons>
+        <app-icons (commentClickFlag)="onCommentClickFlag($event)"></app-icons>
     </div>
 </div>

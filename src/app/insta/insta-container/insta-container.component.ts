@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstaContainerComponent implements OnInit {
 
+  clickFlag: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onCommentClickFlag(clickFlag: boolean) {
+    this.clickFlag = clickFlag;
+    console.log("from Parent", clickFlag);
+  }
 }

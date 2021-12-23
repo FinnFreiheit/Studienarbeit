@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-icons',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconsComponent implements OnInit {
 
+  @Output() commentClickFlag = new EventEmitter<boolean>();
+  booleanToggle: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  commentClick() {
+    this.booleanToggle = !this.booleanToggle;
+    this.commentClickFlag.emit(this.booleanToggle);
+    console.log(this.booleanToggle);
+  }
 }
