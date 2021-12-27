@@ -1,7 +1,10 @@
 <div class="uk-grid">
     <div class="uk-width-1-2">
         <div class="uk-align-right">
-            <img src="../../../assets/heart.svg" alt="heartSvg" width="45" height="45">
+          <div class="heartCounterContainer" (click)="heartClick()">
+            <div class="counter"><p>{{likeCounter}}</p></div>
+            <img class="heart" src="../../../assets/heart.svg" alt="heartSvg" width="45" height="45">
+          </div>
         </div>
     </div>
     <div class="uk-width-1-2">

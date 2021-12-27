@@ -1,3 +1,5 @@
+
+<div *ngFor="let comment of commentArray">
 <div class="uk-card uk-card-default uk-grid-collapse  uk-margin" uk-grid>
   <div class="uk-card-header uk-width-1-4" >
     <div class="uk-grid-small uk-flex-middle" uk-grid>
@@ -5,14 +7,14 @@
         <img class="uk-border-circle" width="40" height="40" src="https://getuikit.com/docs/images/avatar.jpg">
       </div>
       <div class="uk-width-expand">
-        <h3 class="uk-card-title uk-margin-remove-bottom">Title</h3>
-        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
+        <h3 class="uk-card-title uk-margin-remove-bottom">{{comment.name}}</h3>
+        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">{{comment.date}}</time></p>
       </div>
     </div>
   </div>
   <div class="uk-card-body uk-width-3-4">
-    <h3 class="uk-card-title">Media Left</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+    <p>{{comment.message}}</p>
   </div>
+</div>
 </div>
 

@@ -9,11 +9,16 @@ export class IconsComponent implements OnInit {
 
   @Output() commentClickFlag = new EventEmitter<boolean>();
   booleanToggle: boolean = false;
+  likeCounter: number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  heartClick(){
+    this.likeCounter = this.likeCounter + 1;
+  }
 
   commentClick() {
     this.booleanToggle = !this.booleanToggle;

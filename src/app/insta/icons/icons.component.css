@@ -1,0 +1,27 @@
+
+.heartCounterContainer{
+  display: grid;
+}
+
+.heart{
+  z-index: 1;
+}
+
+.counter{
+  display: grid;
+  background: gray;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  position: absolute;
+  justify-self: right;
+  align-self: start;
+  justify-items: center;
+  align-items: center;
+}
+
+p{
+  color: white;
+  font-size: 10px;
+}
