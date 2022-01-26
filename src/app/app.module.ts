@@ -10,6 +10,9 @@ import { NavigationModule } from './navigation/navigation.module';
 import { InstaModule } from './insta/insta.module';
 import { LoginModule } from './login/login.module';
 import {ReactiveFormsModule} from "@angular/forms";
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import {ReactiveFormsModule} from "@angular/forms";
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

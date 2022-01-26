@@ -8,6 +8,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 export class IconsComponent implements OnInit {
 
   @Output() commentClickFlag = new EventEmitter<boolean>();
+
   booleanToggle: boolean = false;
   likeCounter: number = 0;
   constructor() { }

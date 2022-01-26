@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-insta-container',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class InstaContainerComponent implements OnInit {
 
   clickFlag: boolean = false;
+  pictureId: number | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +19,10 @@ export class InstaContainerComponent implements OnInit {
   onCommentClickFlag(clickFlag: boolean) {
     this.clickFlag = clickFlag;
     console.log("from Parent", clickFlag);
+  }
+
+  onPictureId(pictureId: number){
+    this.pictureId = pictureId;
+    console.log("from Parent Picture ID", pictureId);
   }
 }

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommentData} from "../../interfaces/comment-data";
+import {BackendService} from "../../services/backend.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-comments',
@@ -8,14 +10,19 @@ import { CommentData} from "../../interfaces/comment-data";
 })
 export class CommentsComponent implements OnInit {
 
-  commentOne: CommentData = {name:"finn", date:"10.11.1997", message:"Was ein schöner Tag"};
-  commentTwo: CommentData = {name: "mats", date:"11.04.1996", message:"Ich mag Fussball"};
-  commentThree: CommentData = {name: "lu", date: "04.06.2003", message:"Dies Das Uni"};
+  @Input() id: number | undefined;
 
-  commentArray: CommentData[] = [this.commentOne, this.commentTwo, this.commentThree];
-  constructor() { }
+
+  commentArray!: CommentData[];
+
+
+  constructor(private bs: BackendService) { }
 
   ngOnInit(): void {
+    console.log("ID Comment ", this.id);
+    this.commentArray = this.bs.getCommentsById(this.id);
   }
+
+
 
 }

@@ -22,3 +22,11 @@ einem Backend und einem Frontend welches mit Angular entwickelt wird.
 Bei der Anwendung handelt es sich um ein Instagram-Clon. 
 Der Anwender ist in der lage sich anzumelden und Fotos hochzuladen, aufzunehmen und 
 die Fotos von anderen Nutzern zu bewerten sowie zu kommentieren. 
+
+
+# TODO bis 09.02
+
+1. ER-Modell für die Datenbank erstellen (umsetzen)
+2. Backend und Frontend Local verknüpfen
+3. PWA Themen Schriftlich auserbeiten 
+

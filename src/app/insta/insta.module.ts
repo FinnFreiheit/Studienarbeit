@@ -4,6 +4,10 @@ import { InstaContainerComponent } from './insta-container/insta-container.compo
 import { PicturesComponent } from './pictures/pictures.component';
 import { IconsComponent } from './icons/icons.component';
 import { CommentsComponent } from './comments/comments.component';
+import { StoreModule } from '@ngrx/store';
+import * as fromInsta from './store/insta.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { InstaEffects } from './store/insta.effects';
 
 
 
@@ -15,7 +19,9 @@ import { CommentsComponent } from './comments/comments.component';
     CommentsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    StoreModule.forFeature(fromInsta.instaFeatureKey, fromInsta.reducer),
+    EffectsModule.forFeature([InstaEffects])
   ],
   exports: [
     InstaContainerComponent

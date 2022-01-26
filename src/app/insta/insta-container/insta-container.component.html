@@ -1,9 +1,9 @@
 <div class="container">
     <div *ngIf="!clickFlag" class="pic">
-        <app-pictures></app-pictures>
+        <app-pictures (pictureId)="onPictureId($event)"></app-pictures>
     </div>
     <div *ngIf="clickFlag" class="comment">
-      <app-comments></app-comments>
+      <app-comments [id]="pictureId"></app-comments>
     </div>
     <div class="icons">
         <app-icons (commentClickFlag)="onCommentClickFlag($event)"></app-icons>
