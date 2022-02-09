@@ -24,11 +24,11 @@
                 <p>repeat Password</p>
                 <div class="uk-inline uk-width-1-1">
                   <span class="uk-form-icon" uk-icon="icon: lock"></span>
-                  <input class="uk-input uk-form-large" type="password" formControlName="repeatPassword" ()="">
+                  <input class="uk-input uk-form-large" [class.errorPw] = "!correctPw" type="password" formControlName="repeatPassword">
                 </div>
               </div>
               <div class="uk-margin">
-                <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Sign Up</button>
+                <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" [disabled]="!signUpForm.valid">Sign Up</button>
               </div>
               <div class="uk-text-small uk-text-center">
                  registered? <a href="#">Go to login</a>

@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { EffectsModule } from '@ngrx/effects';
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {BackendService} from "../../services/backend.service";
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,11 @@ export class LoginComponent implements OnInit {
     password: [''],
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private bs: BackendService) { }
 
   ngOnInit(): void {
+    this.bs.getAllUser().subscribe(res => console.log(res))
   }
 
   submitForm(){
