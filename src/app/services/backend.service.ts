@@ -18,6 +18,10 @@ export class BackendService {
     return this.http.get<any>(`${this.api}/users`);
   }
 
+  createUser(data: UserData): Observable<UserData>{
+    return this.http.post<UserData>(this.api+ '/users', data);
+  }
+
   getCommentsById(id: number | undefined): CommentData[]{
      if (id == 1) {
        return [
