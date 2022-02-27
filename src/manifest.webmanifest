@@ -1,9 +1,9 @@
 {
   "name": "pwa-insta",
   "short_name": "pwa-insta",
-  "theme_color": "#1976d2",
+  "theme_color": "#fafafa",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "minimal-ui",
   "scope": "./",
   "start_url": "./",
   "icons": [
