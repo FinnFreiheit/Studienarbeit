@@ -3,7 +3,7 @@
   "short_name": "pwa-insta",
   "theme_color": "#fafafa",
   "background_color": "#fafafa",
-  "display": "minimal-ui",
+  "display": "standalone",
   "scope": "./",
   "start_url": "./",
   "icons": [
