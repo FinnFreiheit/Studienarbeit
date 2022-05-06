@@ -8,6 +8,9 @@ import { StoreModule } from '@ngrx/store';
 import * as fromInsta from './store/insta.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { InstaEffects } from './store/insta.effects';
+import { FileuploadComponent } from './fileupload/fileupload.component';
+import {NgxFileDropModule} from "ngx-file-drop";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -16,15 +19,19 @@ import { InstaEffects } from './store/insta.effects';
     InstaContainerComponent,
     PicturesComponent,
     IconsComponent,
-    CommentsComponent
+    CommentsComponent,
+    FileuploadComponent
   ],
   imports: [
     CommonModule,
     StoreModule.forFeature(fromInsta.instaFeatureKey, fromInsta.reducer),
-    EffectsModule.forFeature([InstaEffects])
+    EffectsModule.forFeature([InstaEffects]),
+    NgxFileDropModule,
+    RouterModule
   ],
   exports: [
-    InstaContainerComponent
+    InstaContainerComponent,
+    FileuploadComponent
   ]
 })
 export class InstaModule { }

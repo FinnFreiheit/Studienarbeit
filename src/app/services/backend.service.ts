@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UserData} from "../interfaces/user-data";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,6 +21,10 @@ export class BackendService {
 
   createUser(data: UserData): Observable<UserData>{
     return this.http.post<UserData>(this.api+ '/users', data);
+  }
+
+  createComment(data:any): Observable<any>{
+    return this.http.post<any>(this.api + '/comments', data);
   }
 
   getCommentsById(id: number | undefined): CommentData[]{
@@ -46,5 +51,14 @@ export class BackendService {
       { src: "../../../assets/pic01.jpg", id: 1},
       { src: "../../../assets/pic02.jpg", id: 2},
       { src: "../../../assets/pic03.jpg", id: 3}];
+  }
+
+  upload(file: FormData): Observable<{url:string}> {
+    return this.http.post<{url:string}>(this.api + '/upload', file, {responseType: 'json'});
+  }
+
+
+  download(url: string): Observable<Blob> {
+    return this.http.get(url, {responseType:'blob'});
   }
 }

@@ -23,6 +23,7 @@
     "@ngrx/store": "^12.5.1",
     "@ngrx/store-devtools": "^12.5.1",
     "jquery": "^3.6.0",
+    "ngx-file-drop": "^13.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "uikit": "^3.7.6",

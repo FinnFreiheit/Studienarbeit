@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import { CommentData} from "../../interfaces/comment-data";
 import {BackendService} from "../../services/backend.service";
 import {Observable} from "rxjs";
@@ -11,9 +11,11 @@ import {Observable} from "rxjs";
 export class CommentsComponent implements OnInit {
 
   @Input() id: number | undefined;
+  @ViewChild('comment') inputComment: any;
 
 
   commentArray!: CommentData[];
+  commentData!: any;
 
 
   constructor(private bs: BackendService) { }
@@ -23,6 +25,20 @@ export class CommentsComponent implements OnInit {
     this.commentArray = this.bs.getCommentsById(this.id);
   }
 
+  submitComment(comment: string){
+    console.log(comment);
 
+    this.commentData = {
+      userID: "dev",
+      message: comment,
+      pictureID: 1,
+    }
+
+    this.bs.createComment(this.commentData).subscribe(res => {
+      console.log(res);
+    });
+
+    this.inputComment.nativeElement.value = '';
+  }
 
 }

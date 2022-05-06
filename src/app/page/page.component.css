@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         "navbar"
         "insta"
         "footer";
@@ -26,4 +26,13 @@
     width: 100%;
     height: 100%;
     grid-area: footer;
+
+  display: grid;
+  justify-items: right;
+  align-items: center;
 }
+
+.uploadeIcon{
+  padding-right: 5%;
+}
+

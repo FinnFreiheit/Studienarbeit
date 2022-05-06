@@ -1,0 +1,39 @@
+<div class="container my-5 center">
+  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+  </ngx-file-drop>
+  <div class="my-5 upload-table">
+    <table id="table" class="table">
+      <caption>Files</caption>
+      <thead>
+      <tr>
+        <th scope="col">File name</th>
+        <th scope="col">File size</th>
+        <th scope="col">File type</th>
+        <th scope="col">Last modified</th>
+        <th scope="col">Show</th>
+      </tr>
+      </thead>
+      <tbody class="upload-name-style">
+      <tr *ngFor="let file of fileinfos; let i=index">
+        <td>{{ file.filename }}
+        </td>
+        <td>{{ file.filesize }}
+        </td>
+        <td>{{ file.filetype }}
+        </td>
+        <td>{{ file.lastModified }}
+        </td>
+        <td>
+          <a class="btn btn-info btn-sm" (click)=" showImage(file.url) ">Show</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<div *ngIf=" showImg " class=" container my-5 center ">
+  <img [src]="sanitizedUrl" alt="bild" />
+</div>
+  <div class="return">
+    <button class="uk-button uk-button-primary" routerLink="../page">Return</button>
+  </div>
+</div>
